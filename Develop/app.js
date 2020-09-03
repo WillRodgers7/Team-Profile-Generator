@@ -33,16 +33,117 @@ function menue() {
    })
 }
 
+// Manager Function
 function createManager(){
-    inquirer.prompt({
-        name:
-        Id:
-        Email:
-        officeNumber:
-    })
+    const managerQuestions = [{
+        
+        type: "input",
+        name: "name",
+        message: "What is your name?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "id",
+        message: "What is your id?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "email",
+        message: "What is your email?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "number",
+        message: "What is your office number?"
+        
+    }
+];
+    inquirer.prompt(managerQuestions);
 }
-// and to create objects for each team member (using the correct classes as blueprints!)
 
+
+// Engineer Function
+function createEngineer(){
+    const engineerQuestions = [{
+        
+        type: "input",
+        name: "name",
+        message: "What is your name?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "id",
+        message: "What is your id?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "email",
+        message: "What is your email?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "github",
+        message: "What is your Github username?"
+        
+    }
+];
+    inquirer.prompt(engineerQuestions);
+}
+
+
+// Intern Function
+function createIntern(){
+    const internQuestions = [{
+        
+        type: "input",
+        name: "name",
+        message: "What is your name?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "id",
+        message: "What is your id?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "email",
+        message: "What is your email?"
+        
+    },
+    {
+        
+        type: "input",
+        name: "number",
+        message: "What school are you currently attending?"
+        
+    }
+];
+    inquirer.prompt(internQuestions);
+}
+
+
+
+// and to create objects for each team member (using the correct classes as blueprints!)
+// name:
+// Id:
+// Email:
+// officeNumber:
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
