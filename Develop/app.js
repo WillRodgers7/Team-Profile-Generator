@@ -45,8 +45,8 @@ function menu() {
        createIntern();
    
       }
-      else if (choice.userAction ==="All done"){
-        buildTeam();
+      else if (choice.userAction ==="Build Team"){
+        buildTeam(fileName,team);
      
         }
   })
@@ -211,13 +211,6 @@ function buildTeam(fileName, data) {
 
 
 
-
-//  function render(employeeAnswers) {
-//     return `
-//      ${managerQuestions, engineerQuestions, internQuestions},
-     
-//     `;
-//   };
 
 
 // to inject javascript variables or functions use ${variableName}
