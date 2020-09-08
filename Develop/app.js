@@ -102,7 +102,7 @@ function createManager(){
           if (answer.continue){
              menu()
           }  else {
-            buildTeam("team.html", answers)
+            buildTeam("team.html", team)
          }
        })})
 }
@@ -150,7 +150,7 @@ function createEngineer(){
           if (answer.continue){
              menu()
           }  else {
-            buildTeam("team.html", answers)
+            buildTeam("team.html", team)
          }
        })})
 }
@@ -180,7 +180,7 @@ function createIntern(){
    {
        
        type: "input",
-       name: "number",
+       name: "school",
        message: "What school are you currently attending?"
        
    }
@@ -198,14 +198,15 @@ function createIntern(){
           if (answer.continue){
              menu()
           }  else {
-            buildTeam("team.html", answers)
+            buildTeam("team.html", team)
          }
        })})
 }
 
 function buildTeam(fileName, data) {
     console.log(data);
-    return fs.writeFileSync(path.join (process.cwd (), fileName), render(managerQuestions,engineerQuestions,internQuestions));
+    return fs.writeFileSync(path.join (process.cwd (), fileName), render(team));
+    
 }
 
 
