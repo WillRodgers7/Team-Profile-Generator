@@ -7,6 +7,7 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
+const team = [];
 
 
 
@@ -87,8 +88,11 @@ function createManager(){
        
    }
 ];
+
    inquirer.prompt(managerQuestions)
    .then(answers => {
+    const manager = new Manager(answers.name, answers.id, answers.email, answers.number);
+    team.push(manager);
        inquirer.prompt([{
           type: "confirm",
           name: "continue",
@@ -135,6 +139,8 @@ function createEngineer(){
 ];
    inquirer.prompt(engineerQuestions)
    .then(answers => {
+    const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+    team.push(engineer);
        inquirer.prompt([{
           type: "confirm",
           name: "continue",
@@ -181,6 +187,8 @@ function createIntern(){
 ];
    inquirer.prompt(internQuestions)
    .then(answers => {
+    const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+    team.push(intern);
        inquirer.prompt([{
           type: "confirm",
           name: "continue",
@@ -196,31 +204,19 @@ function createIntern(){
 }
 
 function buildTeam(fileName, data) {
-    return fs.writeFileSync(path.join (process.cwd (), fileName), data);
+    console.log(data);
+    return fs.writeFileSync(path.join (process.cwd (), fileName), render(managerQuestions,engineerQuestions,internQuestions));
 }
 
 
 
 
-// function init()
-// {
-
-//     inquirer.prompt(answers)
-//     .then(inquirerResponses =>{
-//     console.log("inquirerResponses: ", inquirerResponses)
-//     writeToFile("team.html", generateHTML ({...inquirerResponses}));
-
-//     });
-// };
-
-// init();
-
- function createHtml(employeeAnswers) {
-    return `
-     ${managerQuestions, engineerQuestions, internQuestions},
+//  function render(employeeAnswers) {
+//     return `
+//      ${managerQuestions, engineerQuestions, internQuestions},
      
-    `;
-  };
+//     `;
+//   };
 
 
 // to inject javascript variables or functions use ${variableName}
@@ -250,3 +246,4 @@ function buildTeam(fileName, data) {
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided render function to work! 
+
