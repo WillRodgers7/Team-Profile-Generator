@@ -44,6 +44,10 @@ function menu() {
        createIntern();
    
       }
+      else if (choice.userAction ==="All done"){
+        buildTeam();
+     
+        }
   })
 }
 menu();
@@ -51,6 +55,8 @@ menu();
 
 // and to create objects for each team member (using the correct classes as blueprints!)
 // Manager Function
+// const questions(){
+
 function createManager(){
    const managerQuestions = [{
        
@@ -188,20 +194,21 @@ function buildTeam(fileName, data) {
 
 }
 
+// buildTeam();
 
-function init()
-{
+// function init()
+// {
 
-    inquirer.prompt(questions)
-    .then(inquirerResponses =>{
-    console.log("inquirerResponses: ", inquirerResponses)
-    writeToFile("team.js", generateMarkdown ({...inquirerResponses}));
+//     inquirer.prompt(menu)
+//     .then(inquirerResponses =>{
+//     console.log("inquirerResponses: ", inquirerResponses)
+//     writeToFile("team.js", generateMarkdown ({...inquirerResponses}));
 
-    });
-};
+//     });
+// };
 
 
-init();
+// init();
 // After the user has input all employees desired, call the render function (required
 // above) and pass in an array containing all employee objects; the render function will
 // generate and return a block of HTML including templated divs for each employee!
