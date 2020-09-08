@@ -97,7 +97,9 @@ function createManager(){
        .then(answer => {
           if (answer.continue){
              menu()
-          }
+          }  else {
+            buildTeam("team.html", answers)
+         }
        })})
 }
 // Engineer Function
@@ -141,7 +143,9 @@ function createEngineer(){
        .then(answer => {
           if (answer.continue){
              menu()
-          }
+          }  else {
+            buildTeam("team.html", answers)
+         }
        })})
 }
 // Intern Function
@@ -185,24 +189,26 @@ function createIntern(){
        .then(answer => {
           if (answer.continue){
              menu()
-          }
+          }  else {
+            buildTeam("team.html", answers)
+         }
        })})
 }
 
 function buildTeam(fileName, data) {
     return fs.writeFileSync(path.join (process.cwd (), fileName), data);
-
 }
 
-// buildTeam();
+
+
 
 // function init()
 // {
 
-//     inquirer.prompt(menu)
+//     inquirer.prompt(answers)
 //     .then(inquirerResponses =>{
 //     console.log("inquirerResponses: ", inquirerResponses)
-//     writeToFile("team.js", generateMarkdown ({...inquirerResponses}));
+//     writeToFile("team.html", generateHTML ({...inquirerResponses}));
 
 //     });
 // };
