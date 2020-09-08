@@ -213,8 +213,17 @@ function buildTeam(fileName, data) {
 //     });
 // };
 
-
 // init();
+
+ function createHtml(employeeAnswers) {
+    return `
+     ${managerQuestions, engineerQuestions, internQuestions},
+     
+    `;
+  };
+
+
+// to inject javascript variables or functions use ${variableName}
 // After the user has input all employees desired, call the render function (required
 // above) and pass in an array containing all employee objects; the render function will
 // generate and return a block of HTML including templated divs for each employee!
