@@ -46,7 +46,7 @@ function menu() {
    
       }
       else if (choice.userAction ==="Build Team"){
-        buildTeam(fileName,team);
+        buildTeam("team.html", team);
      
         }
   })
@@ -64,6 +64,7 @@ function createManager(){
        type: "input",
        name: "name",
        message: "What is your name?"
+       
        
    },
    {
